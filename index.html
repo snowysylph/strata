@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Strata</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" />
+
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+	<script src="FileSaver.min.js"></script>
+
+	<script src="strata.js"></script>
+
+	<script>
+		
+		//util.loadSTF("modules.stf", function (output){ console.log(output) });
+		
+		var ship = new strata.Ship({
+			name: "Ship Name",
+			className: "Frigate",
+			sections: [{
+				name: "Prow",
+				HP: {value: 5, max: 5},
+				modules: [{
+					name: "Gun Turret"
+				},{
+					name: "Sensor Array"
+				}]
+			},{
+				name: "Stern",
+				HP: {value: 5, max: 5},
+				modules: [{
+					name: "Engines"
+				}]
+			}]
+		})
+		
+		hangar = new strata.Section({
+			name: "Hangar"
+		})
+		
+		$(document).ready(function (){
+			$(".panel").append(ship.display());
+		})
+	
+	</script>
+</head>
+<body>
+<div class="panel">
+
+</div>
+</body>
+</html>

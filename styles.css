@@ -1,0 +1,62 @@
+
+.name {font-size:large; font-weight: bold; }
+
+.editButton {
+	vertical-align: super;
+	font-size: xx-small;
+	padding: 0px;
+	margin: 5px;
+}
+
+.hidden {display:none;}
+
+.panel { width: 900px }
+
+.ship {
+	border-radius: 5px;
+	border: 1px solid black;
+	padding: 5px;
+	width: 420px;
+}
+.ship .info {
+	margin-bottom: 15px;
+}
+
+
+.section {
+	width: 400px;
+	padding: 2px;
+	margin: 2px;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color:beige;
+}
+
+.section .header {
+	font-size: large;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	margin: 10px;
+}
+
+.section .header .HP {
+	float: right;
+}
+
+.modules {
+	min-height: 50px;
+}
+
+.module {
+	padding: 2px;
+	margin: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.module .header {
+	font-size: medium;
+	border-bottom: none;
+	font-weight: bold;
+}

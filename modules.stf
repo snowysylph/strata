@@ -1,0 +1,61 @@
+
+== REACTORS ==
+--
+ID: reactor_tny
+name: Tiny Reactor
+class: Reactor
+MP: 0.25
+output: 0.5
+--
+ID: reactor_sm
+name: Small Reactor
+class: Reactor
+MP: 1
+output: 2.5
+--
+ID: reactor_med
+name: Medium Reactor
+class: Reactor
+MP: 3
+output: 9
+--
+ID: reactor_lg
+name: Large Reactor
+class: Reactor
+MP: 6
+output: 20
+--
+ID: reactor_hg
+name: Huge Reactor
+class: Reactor
+MP: 9
+output: 32
+--
+
+
+== CAPACITORS ==
+--
+ID: cap_sm
+name: Small Capacitor
+class: Capacitor
+MP: 0.5
+capacity: 1.5
+--
+ID: cap_med
+name: Medium Capacitor
+class: Capacitor
+MP: 1
+capacity: 4
+--
+ID: cap_lg
+name: Large Capacitor
+class: Capacitor
+MP: 3
+capacity: 14
+--
+ID: cap_hg
+name: Huge Capacitor
+class: Capacitor
+MP: 6
+capacity: 30
+--
