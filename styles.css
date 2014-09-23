@@ -1,6 +1,7 @@
 
-.name {font-size:large; font-weight: bold; }
-
+.editProp>input[type="text"]{
+	font: inherit;
+}
 .editButton {
 	vertical-align: super;
 	font-size: xx-small;
@@ -8,55 +9,99 @@
 	margin: 5px;
 }
 
-.hidden {display:none;}
+.alert {
+	text-color: red;
+}
 
-.panel { width: 900px }
+.hidden { display:none; }
+
+.hangar td {
+	vertical-align: top;
+}
+
+.section.storage {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 350px;
+	min-height: 300px;
+	padding: 10px;
+	
+}
+.section.storage>.header {
+	font-size: x-large;
+	font-weight: bold;
+}
+.section.storage>.modules {
+	min-height: 300px;
+	max-height: 500px;
+	overflow: auto;
+}
+select.storageFilter {
+	float: right;
+	text-transform: capitalize;
+}
 
 .ship {
 	border-radius: 5px;
 	border: 1px solid black;
 	padding: 5px;
-	width: 420px;
+	width: 350px;
+}
+.ship>.header, .ship>.info {
+	margin-bottom: 10px;
+	padding:5px;
+}
+.ship>.header>.name {
+	font-size: x-large;
+	font-weight: bold;
+}
+.ship>.header>.className {
+	font-style: italic;
 }
 .ship .info {
-	margin-bottom: 15px;
+	width: 96%;
 }
 
+.ship .sizeInput {
+	width: 30px;
+}
+
+.headerData {
+	float: right;
+	font-weight: normal;
+	padding: 2px;
+}
 
 .section {
-	width: 400px;
+	width: 96%;
 	padding: 2px;
 	margin: 2px;
-	border: 2px solid black;
-	border-radius: 5px;
-	background-color:beige;
 }
 
-.section .header {
+.section>.header {
 	font-size: large;
-	font-weight: bold;
-	border-bottom: 1px solid black;
-	margin: 10px;
-}
-
-.section .header .HP {
-	float: right;
 }
 
 .modules {
-	min-height: 50px;
+	min-height: 30px;
 }
-
 .module {
-	padding: 2px;
+	padding: 5px;
 	margin: 5px;
 	border: 1px solid black;
 	border-radius: 5px;
 	background-color: white;
+	cursor: pointer;
 }
 
-.module .header {
+.module>.header {
 	font-size: medium;
 	border-bottom: none;
 	font-weight: bold;
+}
+
+.stat {
+	font-size: small;
+	text-transform:capitalize;
+	padding: 2px;
 }

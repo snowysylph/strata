@@ -12,43 +12,127 @@
 
 	<script src="strata.js"></script>
 
+	<data id="modules" class="hidden">		
+	
+		== REACTORS ==
+		--
+		ID: reactor_tny
+		name: Tiny Reactor
+		type: reactor
+		installSpace: 0.25
+		power: 0.25
+		--
+		ID: reactor_sm
+		name: Small Reactor
+		type: reactor
+		installSpace: 1
+		power: 1
+		--
+		ID: reactor_med
+		name: Medium Reactor
+		type: reactor
+		installSpace: 4
+		power: 6
+		--
+		ID: reactor_lg
+		name: Large Reactor
+		type: reactor
+		installSpace: 8
+		power: 14
+		--
+		ID: reactor_hg
+		name: Huge Reactor
+		type: reactor
+		installSpace: 16
+		power: 32
+		--
+
+
+		== CAPACITORS ==
+		--
+		ID: cap_tny
+		name: Tiny Capacitor
+		type: capacitor
+		installSpace: 0.25
+		power_storage: 0.5
+		--
+		ID: cap_sm
+		name: Small Capacitor
+		type: capacitor
+		installSpace: 1
+		power_storage: 2.5
+		--
+		ID: cap_med
+		name: Medium Capacitor
+		type: capacitor
+		installSpace: 3
+		power_storage: 9
+		--
+		ID: cap_lg
+		name: Large Capacitor
+		type: capacitor
+		installSpace: 9
+		power_storage: 30
+		--
+	</data>
+	
 	<script>
-		
-		//util.loadSTF("modules.stf", function (output){ console.log(output) });
+		data.modules = util.parseSTF($("#modules").text());
 		
 		var ship = new strata.Ship({
-			name: "Ship Name",
-			className: "Frigate",
+			name: "HSS Providence",
+			className: "'Vigilant' Recon Frigate",
+			size: 5,
+			
+			hull: 15,
+			hull_max: 15,
+			
+			hardpoints: 0,
+			hardpoints_max: 6,
+			
+			installSpace: 0,
+			installSpace_max: 15,
+			
+			power: 0,
+			power_stored: 0,
+			power_storage: 5,
+			
 			sections: [{
 				name: "Prow",
-				HP: {value: 5, max: 5},
-				modules: [{
-					name: "Gun Turret"
-				},{
-					name: "Sensor Array"
-				}]
+				modules: []
 			},{
 				name: "Stern",
-				HP: {value: 5, max: 5},
-				modules: [{
-					name: "Engines"
-				}]
+				modules: []
+			},{
+				name: "Core",
+				modules: []
 			}]
-		})
+		}),
 		
-		hangar = new strata.Section({
-			name: "Hangar"
-		})
+		
+		storage = new strata.Storage({
+			name: "Storage"
+		});
+		
+		for (key in data.modules){
+			for (var i = 0; i < 3; i++){
+				storage.addModule(new strata.Module(data.modules[key]));
+			}
+		}
 		
 		$(document).ready(function (){
-			$(".panel").append(ship.display());
-		})
+			//$("#ships").append(ship.display());
+			$("#ships").append(widgets.newShip());
+			$("#storage").append(storage.display().addClass("storage"));
+		});
 	
 	</script>
+
 </head>
 <body>
-<div class="panel">
-
-</div>
+<table class="hangar">
+	<td id="ships"></td>
+	<td id="storage"></td>
+</table>
 </body>
 </html>
